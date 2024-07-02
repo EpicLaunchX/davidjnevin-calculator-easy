@@ -1,7 +1,13 @@
-class Operands:
-    def __init__(self, first_operand: int, second_operand: int):
-        if not isinstance(first_operand, int) or not isinstance(second_operand, int):
-            raise TypeError("Both Operands must be integers")
-        self.first_operand = first_operand
-        self.second_operand = second_operand
+from dataclasses import dataclass
 
+
+@dataclass
+class Operands:
+    first_operand: int
+    second_operand: int
+
+
+def operands_factory(first_operand: int, second_operand: int) -> Operands:
+    if not isinstance(first_operand, int) or not isinstance(second_operand, int):
+        raise (TypeError("Operands must be integers"))
+    return Operands(first_operand, second_operand)
