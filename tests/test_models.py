@@ -1,4 +1,5 @@
 import pytest
+
 from src.pytemplate.domain.models import operands_factory
 
 
